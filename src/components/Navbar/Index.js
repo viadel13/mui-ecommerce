@@ -1,34 +1,33 @@
-import { Box, Button, Container, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack } from '@mui/material'
+import { AppBar, Box, Container, List, ListItem, ListItemButton, ListItemText, Stack } from '@mui/material'
 
 const Navbar = () => {
   return (
-    <Box>
+    <Box  borderBottom='2px solid #E4E7ED' sx={{display:{xs: 'none', sm: 'block'}, bgcolor: 'white'}} position='sticky' top={0} zIndex={1}>
       <Container disableGutters>
- 
-          {/* <List sx={{ display: 'flex' }}>
+        <Stack direction='row' justifyContent='center'>
+          <List sx={{ display: 'flex' }}>
             <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemText primary="Home" />
+              <ListItemButton disableGutters  sx={{color: '#2B2D42', '&:hover':{background: 'transparent', color: '#D10024'}}} disableRipple >
+                <ListItemText primary="Home"/>
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton sx={{color: '#2B2D42', '&:hover':{background: 'transparent', color: '#D10024'}}} disableRipple >
                 <ListItemText primary="Shop" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton sx={{color: '#2B2D42', '&:hover':{background: 'transparent', color: '#D10024'}}} disableRipple >
                 <ListItemText primary="Blog" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton sx={{color: '#2B2D42', '&:hover':{background: 'transparent', color: '#D10024'}}} disableRipple >
                 <ListItemText primary="Contact" />
               </ListItemButton>
             </ListItem>
-          </List> */}
-          <Button sx={{m: 0, p: 0}}>Hello</Button>
-       
+          </List>
+        </Stack>
       </Container>
 
     </Box>

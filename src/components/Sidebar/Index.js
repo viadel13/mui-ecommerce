@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 const Sidebar = () => {
 
   return (
-    <Box sx={{  position: 'sticky', height: '90vh', top:'10vh'}}>
+    <Box sx={{  position: 'sticky', height: 'auto', top:'70px'}}>
       <Divider>
         <Typography variant='h6' color='#D10024'>CATEGORY</Typography>
       </Divider>
@@ -18,7 +18,7 @@ const Sidebar = () => {
             </IconButton>
           }>
             <ListItemButton sx={{ color: '#2B2D42', '&:hover': { background: 'transparent' } }} disableRipple >
-              <ListItemText primary="ORDINATEURS PERSONNELS" primaryTypographyProps={{ fontSize: 14 }} />
+              <ListItemText primary="ORDINATEURS PERSONNELS"   primaryTypographyProps={{ fontSize: {sm : '12px', md: '14px'} }} />
             </ListItemButton>
           </ListItem>
         </List>
@@ -29,7 +29,7 @@ const Sidebar = () => {
             </IconButton>
           }>
             <ListItemButton sx={{ color: '#2B2D42', '&:hover': { background: 'transparent' } }} disableRipple >
-              <ListItemText primary="ECRANS" primaryTypographyProps={{ fontSize: 14 }} />
+              <ListItemText primary="ECRANS"  primaryTypographyProps={{ fontSize: {sm : '12px', md: '14px'} }} />
             </ListItemButton>
           </ListItem>
         </List>
@@ -40,7 +40,7 @@ const Sidebar = () => {
             </IconButton>
           }>
             <ListItemButton sx={{ color: '#2B2D42', '&:hover': { background: 'transparent' } }} disableRipple >
-              <ListItemText primary="STOCKAGE EXTERNE" primaryTypographyProps={{ fontSize: 14 }} />
+              <ListItemText primary="STOCKAGE EXTERNE"  primaryTypographyProps={{ fontSize: {sm : '12px', md: '14px'} }} />
             </ListItemButton>
           </ListItem>
         </List>
@@ -51,14 +51,14 @@ const Sidebar = () => {
             </IconButton>
           }>
             <ListItemButton sx={{ color: '#2B2D42', '&:hover': { background: 'transparent' } }} disableRipple >
-              <ListItemText primary="ECRANS" primaryTypographyProps={{ fontSize: 14 }} />
+              <ListItemText primary="ECRANS"  primaryTypographyProps={{ fontSize: {sm : '12px', md: '14px'} }} />
             </ListItemButton>
           </ListItem>
         </List>
         <List>
           <ListItem disablePadding >
             <ListItemButton sx={{ color: '#2B2D42', '&:hover': { background: 'transparent' } }} disableRipple >
-              <ListItemText primary="PERIPHERIQUES D'ENTREE" primaryTypographyProps={{ fontSize: 14 }} />
+              <ListItemText primary="PERIPHERIQUES D'ENTREE"  primaryTypographyProps={{ fontSize: {sm : '12px', md: '14px'} }} />
             </ListItemButton>
           </ListItem>
         </List>
@@ -66,35 +66,35 @@ const Sidebar = () => {
         <List>
           <ListItem disablePadding >
             <ListItemButton sx={{ color: '#2B2D42', '&:hover': { background: 'transparent' } }} disableRipple >
-              <ListItemText primary="IMPRIMANTES ET SCANER" primaryTypographyProps={{ fontSize: 14 }} />
+              <ListItemText primary="IMPRIMANTES ET SCANER"  primaryTypographyProps={{ fontSize: {sm : '12px', md: '14px'} }} />
             </ListItemButton>
           </ListItem>
         </List>
         <List>
           <ListItem disablePadding >
             <ListItemButton sx={{ color: '#2B2D42', '&:hover': { background: 'transparent' } }} disableRipple >
-              <ListItemText primary="RESEAUX ET CONNECTIVITE" primaryTypographyProps={{ fontSize: 14 }} />
+              <ListItemText primary="RESEAUX ET CONNECTIVITE"  primaryTypographyProps={{ fontSize: {sm : '12px', md: '14px'} }} />
             </ListItemButton>
           </ListItem>
         </List>
         <List>
           <ListItem disablePadding>
             <ListItemButton sx={{ color: '#2B2D42', '&:hover': { background: 'transparent' } }} disableRipple >
-              <ListItemText primary="ACCESSOIRES AUDIO" primaryTypographyProps={{ fontSize: 14 }} />
+              <ListItemText primary="ACCESSOIRES AUDIO"  primaryTypographyProps={{ fontSize: {sm : '12px', md: '14px'} }} />
             </ListItemButton>
           </ListItem>
         </List>
         <List>
           <ListItem disablePadding>
             <ListItemButton sx={{ color: '#2B2D42', '&:hover': { background: 'transparent' } }} disableRipple >
-              <ListItemText primary="APPAREILS DE JEUX" primaryTypographyProps={{ fontSize: 14 }} />
+              <ListItemText primary="APPAREILS DE JEUX"  primaryTypographyProps={{ fontSize: {sm : '12px', md: '14px'} }} />
             </ListItemButton>
           </ListItem>
         </List>
         <List>
           <ListItem disablePadding >
             <ListItemButton sx={{ color: '#2B2D42', '&:hover': { background: 'transparent' } }} disableRipple >
-              <ListItemText primary="CAMERAS ET WEBCAM" primaryTypographyProps={{ fontSize: 14 }} />
+              <ListItemText primary="CAMERAS ET WEBCAM"  primaryTypographyProps={{ fontSize: {sm : '12px', md: '14px'} }} />
             </ListItemButton>
           </ListItem>
         </List>

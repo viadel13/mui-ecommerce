@@ -2,7 +2,7 @@ import { AppBar, Box, Container, List, ListItem, ListItemButton, ListItemText, S
 
 const Navbar = () => {
   return (
-    <Box  borderBottom='2px solid #E4E7ED' sx={{display:{xs: 'none', sm: 'block'}, bgcolor: 'white'}} position='sticky' top={0} zIndex={1}>
+    <Box  borderBottom='2px solid #E4E7ED' sx={{display:{xs: 'none', sm: 'block'}, bgcolor: 'white', zIndex: '999'}} position='sticky' top={0}>
       <Container disableGutters>
         <Stack direction='row' justifyContent='center'>
           <List sx={{ display: 'flex' }}>

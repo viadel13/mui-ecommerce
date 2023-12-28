@@ -102,58 +102,7 @@ const Home = () => {
 
           </StyledCard>
         </Box>
-        <Box display="flex" sx={{justifyContent: {xs: 'center', md: 'flex-start', sm: 'flex-start'}}}>
-          <StyledCard variant='outlined'>
-            <Stack direction="row" px={2} pt={2} spacing={1} justifyContent='end'>
-              <Avatar sx={{ bgcolor: '#D10024', fontSize: 12, height: 20, width: 45, border: '2px solid #D10024' }} variant="square">
-                NEW
-              </Avatar>
-              <Avatar sx={{ bgcolor: 'white', fontSize: 12, height: 20, width: 45, color: '#D10024', border: '2px solid #D10024' }} variant="square">
-                -30%
-              </Avatar>
-            </Stack>
-            <Box display='flex' justifyContent='center'>
-              <CardMedia
-                component="img"
-                height="190"
-                sx={{ objectFit: 'unset', width: { md: '260px', xs: '100%' } }}
-                image={camera}
-                alt="Paella dish"
-              />
-            </Box>
-
-            <CardContent>
-              <Stack spacing={1}>
-                <Typography gutterBottom variant="P" component="div" color="text.secondary" sx={{ fontSize: '14px', textAlign: 'center' }}>
-                  CATEGORY
-                </Typography>
-                <Typography variant="h4" href="#" sx={{ fontSize: '15px', textAlign: 'center', color: '#2B2D42', fontWeight: '900' }}>
-                  PRODUCT NAME GOES HERE
-                </Typography>
-                <Stack direction='row' justifyContent='center'>
-                  <Typography variant="h4" href="#" sx={{ fontSize: '18px', textAlign: 'center', color: '#D10024', fontWeight: '900' }}>
-                    $980.00 <Typography variant='sub' component='sub' color='text.secondary' sx={{ fontWeight: 400, fontSize: '14px' }} ><s color='text.secondary'>$9990.0</s></Typography>
-                  </Typography>
-                </Stack>
-                <Divider>
-                  <Rating name="half-rating-read" defaultValue={3.5} precision={1} readOnly size="small" />
-                </Divider>
-                <Stack direction='row' justifyContent='center'>
-                  <IconButton aria-label="add to favorites">
-                    <Checkbox
-                      icon={<FavoriteBorder />}
-                      checkedIcon={<Favorite color='error' />}
-                    />
-                  </IconButton>
-                  <Button sx={{color: 'green'}} variant="text" startIcon={<ShoppingCart />} size='small'>
-                    Add
-                  </Button>
-                </Stack>
-              </Stack>
-            </CardContent>
-
-          </StyledCard>
-        </Box>
+      
         <Box display="flex" sx={{justifyContent: {xs: 'center', md: 'flex-start', sm: 'flex-start'}}}>
           <StyledCard variant='outlined'>
             <Stack direction="row" px={2} pt={2} spacing={1} justifyContent='end'>
@@ -310,6 +259,110 @@ const Home = () => {
 
           </StyledCard>
         </Box>
+        {/* <Box display="flex" sx={{justifyContent: {xs: 'center', md: 'flex-start', sm: 'flex-start'}}}>
+          <StyledCard variant='outlined'>
+            <Stack direction="row" px={2} pt={2} spacing={1} justifyContent='end'>
+              <Avatar sx={{ bgcolor: '#D10024', fontSize: 12, height: 20, width: 45, border: '2px solid #D10024' }} variant="square">
+                NEW
+              </Avatar>
+              <Avatar sx={{ bgcolor: 'white', fontSize: 12, height: 20, width: 45, color: '#D10024', border: '2px solid #D10024' }} variant="square">
+                -30%
+              </Avatar>
+            </Stack>
+            <Box display='flex' justifyContent='center'>
+              <CardMedia
+                component="img"
+                height="190"
+                sx={{ objectFit: 'unset', width: { md: '260px', xs: '100%' } }}
+                image={camera}
+                alt="Paella dish"
+              />
+            </Box>
+
+            <CardContent>
+              <Stack spacing={1}>
+                <Typography gutterBottom variant="P" component="div" color="text.secondary" sx={{ fontSize: '14px', textAlign: 'center' }}>
+                  CATEGORY
+                </Typography>
+                <Typography variant="h4" href="#" sx={{ fontSize: '15px', textAlign: 'center', color: '#2B2D42', fontWeight: '900' }}>
+                  PRODUCT NAME GOES HERE
+                </Typography>
+                <Stack direction='row' justifyContent='center'>
+                  <Typography variant="h4" href="#" sx={{ fontSize: '18px', textAlign: 'center', color: '#D10024', fontWeight: '900' }}>
+                    $980.00 <Typography variant='sub' component='sub' color='text.secondary' sx={{ fontWeight: 400, fontSize: '14px' }} ><s color='text.secondary'>$9990.0</s></Typography>
+                  </Typography>
+                </Stack>
+                <Divider>
+                  <Rating name="half-rating-read" defaultValue={3.5} precision={1} readOnly size="small" />
+                </Divider>
+                <Stack direction='row' justifyContent='center'>
+                  <IconButton aria-label="add to favorites">
+                    <Checkbox
+                      icon={<FavoriteBorder />}
+                      checkedIcon={<Favorite color='error' />}
+                    />
+                  </IconButton>
+                  <Button sx={{color: 'green'}} variant="text" startIcon={<ShoppingCart />} size='small'>
+                    Add
+                  </Button>
+                </Stack>
+              </Stack>
+            </CardContent>
+
+          </StyledCard>
+        </Box>
+        <Box display="flex" sx={{justifyContent: {xs: 'center', md: 'flex-start', sm: 'flex-start'}}}>
+          <StyledCard variant='outlined'>
+            <Stack direction="row" px={2} pt={2} spacing={1} justifyContent='end'>
+              <Avatar sx={{ bgcolor: '#D10024', fontSize: 12, height: 20, width: 45, border: '2px solid #D10024' }} variant="square">
+                NEW
+              </Avatar>
+              <Avatar sx={{ bgcolor: 'white', fontSize: 12, height: 20, width: 45, color: '#D10024', border: '2px solid #D10024' }} variant="square">
+                -30%
+              </Avatar>
+            </Stack>
+            <Box display='flex' justifyContent='center'>
+              <CardMedia
+                component="img"
+                height="190"
+                sx={{ objectFit: 'unset', width: { md: '260px', xs: '100%' } }}
+                image={camera}
+                alt="Paella dish"
+              />
+            </Box>
+
+            <CardContent>
+              <Stack spacing={1}>
+                <Typography gutterBottom variant="P" component="div" color="text.secondary" sx={{ fontSize: '14px', textAlign: 'center' }}>
+                  CATEGORY
+                </Typography>
+                <Typography variant="h4" href="#" sx={{ fontSize: '15px', textAlign: 'center', color: '#2B2D42', fontWeight: '900' }}>
+                  PRODUCT NAME GOES HERE
+                </Typography>
+                <Stack direction='row' justifyContent='center'>
+                  <Typography variant="h4" href="#" sx={{ fontSize: '18px', textAlign: 'center', color: '#D10024', fontWeight: '900' }}>
+                    $980.00 <Typography variant='sub' component='sub' color='text.secondary' sx={{ fontWeight: 400, fontSize: '14px' }} ><s color='text.secondary'>$9990.0</s></Typography>
+                  </Typography>
+                </Stack>
+                <Divider>
+                  <Rating name="half-rating-read" defaultValue={3.5} precision={1} readOnly size="small" />
+                </Divider>
+                <Stack direction='row' justifyContent='center'>
+                  <IconButton aria-label="add to favorites">
+                    <Checkbox
+                      icon={<FavoriteBorder />}
+                      checkedIcon={<Favorite color='error' />}
+                    />
+                  </IconButton>
+                  <Button sx={{color: 'green'}} variant="text" startIcon={<ShoppingCart />} size='small'>
+                    Add
+                  </Button>
+                </Stack>
+              </Stack>
+            </CardContent>
+
+          </StyledCard>
+        </Box> */}
 
       </Carousel>
     </Box>

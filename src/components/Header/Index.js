@@ -1,20 +1,25 @@
-import { Favorite, RadioButtonCheckedOutlined, Search, ShoppingCart } from '@mui/icons-material';
-import { Badge, Box, Button, ButtonGroup, Container, Grid, IconButton, InputBase, Menu, MenuItem, Select, Stack, Typography, styled } from '@mui/material';
+import { Favorite, PermIdentity, RadioButtonCheckedOutlined, Search, ShoppingCart } from '@mui/icons-material';
+import { AppBar, Badge, Box, Button, ButtonGroup, Container, Grid, IconButton, InputBase, Menu, MenuItem, Select, Stack, Toolbar, Typography, styled } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = () => {
   const StyledBox = styled(Box)(({ theme }) => ({
     backgroundColor: '#15161D',
     color: 'white',
-    padding: 25,
+    padding: '25px 0',
     borderBottom: '2px solid red',
     [theme.breakpoints.down('sm')]: {
-      padding: '10px 0 0 10px'
+      padding: '5px 0'
     },
+
+    [theme.breakpoints.down('md')]: {
+      padding: '5px 0'
+    },
+
 
   }));
 
-  const StyledButton = styled(Button)({
+  const StyledButtonEcran = styled(Button)({
     backgroundColor: "#D10024",
     color: 'white',
     padding: 10,
@@ -25,6 +30,20 @@ const Header = () => {
       backgroundColor: '#D10024',
     },
   });
+  const StyledButton = styled(Button)(({ theme }) => ({
+    backgroundColor: "#D10024",
+    color: 'white',
+    width: 90,
+    borderRadius: '15px',
+    textTransform: 'capitalize',
+    '&:hover': {
+      backgroundColor: '#D10024',
+    },
+    [theme.breakpoints.up('sm')]: {
+      padding: 8,
+    }
+
+  }));
 
   const StyledSelect = styled(Select)(({ theme }) => ({
     backgroundColor: 'white',
@@ -32,36 +51,46 @@ const Header = () => {
     borderRadius: '18px 0 0 18px',
   }));
 
+  const StyledContained = styled(Container)(({ theme }) => ({
+    [theme.breakpoints.up('xm')]: {
+      maxWidth: theme.breakpoints.values.lg,
+    },
+
+  }));
+
+  const BoxContainer = styled(Container)(({ theme }) => ({
+    width: '100%',
+
+  }));
 
 
   return (
+    <>
+      <StyledBox>
+        <StyledContained disableGutters sx={{ maxWidth: { xs: 'xs', sm: 'md', md: 'xl', lg: 'lg', xl: 'xs' } }}>
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 0, display: { xs: 'block', sm: "none", md: 'none', lg: 'none' } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" component="div" flexGrow={1} sx={{ fontSize: { xs: '20px', sm: '38px' } }}>
+              DV Electro
+              <RadioButtonCheckedOutlined
+                color='error'
+                sx={{
+                  // position: 'absolute',
+                  // top: { xs: 65, sm: 100, md: 95 },
+                  fontSize: '15px',
+                }}
+              />
+            </Typography>
 
-    <StyledBox>
-      <Container disableGutters>
-        <Grid container display='flex' alignItems='center' justifyContent='space-between'>
-          <Grid item xs={6} md={3}>
-            <Stack>
-              <Typography variant='h1' fontWeight={600} sx={{ fontSize: { xs: '20px', sm: '38px' } }}>
-                DV Electro
-                <RadioButtonCheckedOutlined
-                  color='error'
-                  sx={{
-                    position: 'absolute',
-                    top: { xs: 65, sm: 100, md: 95 },
-                    fontSize: '15px',
-                  }}
-                />
-              </Typography>
-            </Stack>
-          </Grid>
-
-          <Grid item xs={2} md={6}>
-            <Stack sx={{ display: { xs: 'flex', sm: 'none' } }}>
-              <IconButton>
-                <Search sx={{ color: "white" }} />
-              </IconButton>
-            </Stack>
-            <Stack sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <Stack sx={{ display: { xs: 'none', md: 'flex' } }} flexGrow={1}>
               <ButtonGroup variant="contained" aria-label="outlined primary button group" size='small' >
                 <StyledSelect
                   displayEmpty
@@ -87,51 +116,36 @@ const Header = () => {
                   }}
                   type='text'
                 />
-
-
-                <StyledButton>Search</StyledButton>
+                <StyledButtonEcran>Search</StyledButtonEcran>
               </ButtonGroup>
             </Stack>
-          </Grid>
 
-          <Grid item xs={2} sx={{ display: { xs: 'flex', sm: 'none' } }} >
-            <Box display='flex' flexDirection='column' alignItems='center'>
-              <Badge badgeContent={4} color="error" sx={{ px: 1 }}>
-                <ShoppingCart color="white" />
-              </Badge>
-            </Box>
-          </Grid>
-
-          <Grid item xs={2} md={3} position='relative'>
-            <Stack direction='row' sx={{ display: { xs: 'flex', sm: 'none' }, position: 'absolute', right: 0, bottom: -20 }} >
-              <IconButton>
-                <MenuIcon sx={{ color: 'white' }} />
-              </IconButton>
-            </Stack>
-            <Stack direction='row' spacing={5} display='flex' justifyContent='end' sx={{ display: { xs: 'none', sm: 'flex' } }} >
-              <Box display='flex' flexDirection='column' alignItems='center' >
-                <Badge badgeContent={4} color="error" sx={{ px: 1 }}>
-                  <Favorite color="white" />
-                </Badge>
+            <Stack direction='row' spacing={2} flexGrow={1} justifyContent="flex-end">
+              <Stack direction='column'>
+                <IconButton>
+                  <PermIdentity sx={{ color: "white" }} />
+                </IconButton>
                 <Typography variant='span' fontSize={10} sx={{ textAlign: 'center' }}>Wishlist</Typography>
-              </Box>
-              <Box display='flex' flexDirection='column' alignItems='center'>
-                <Badge badgeContent={4} color="error" sx={{ px: 1 }}>
-                  <ShoppingCart color="white" />
-                </Badge>
-                <Typography variant='span' fontSize={12} sx={{ textAlign: 'center' }}>Cart</Typography>
-              </Box>
+              </Stack>
+              <Stack direction='column'>
+                <IconButton sx={{ color: 'white' }}>
+                  <Badge badgeContent={4} color="error" sx={{ px: 1 }}>
+                    <ShoppingCart />
+                  </Badge>
+                </IconButton>
+                <Typography variant='span' fontSize={10} sx={{ textAlign: 'center' }}>Wishlist</Typography>
+              </Stack>
+
+
             </Stack>
-          </Grid>
 
-        </Grid>
-
-        <Grid container mt={2}>
-          <Grid item sx={{ display: { xs: 'none', sm: 'flex', md: 'none' } }}>
-            <Stack>
-              <ButtonGroup variant="contained" aria-label="outlined primary button group" size='small' >
+          </Toolbar>
+          <Toolbar sx={{ display: { xs: 'block', sm: 'block', md: 'none' } }} >
+            <BoxContainer disableGutters >
+              <ButtonGroup sx={{ marginTop: '15px' }} variant="contained" aria-label="outlined primary button group" size='small'>
                 <StyledSelect
                   displayEmpty
+                  sx={{ display: { xs: 'none', sm: 'initial' } }}
                   inputProps={{ 'aria-label': 'Without label' }}
                   size='small'
                   value=""
@@ -144,26 +158,25 @@ const Header = () => {
                   <MenuItem value={30}>Thirty</MenuItem>
                 </StyledSelect>
 
-
                 <InputBase
                   placeholder='Search here'
-                  fullWidth
                   sx={{
                     bgcolor: 'white',
                     px: 2,
+                    borderRadius: { xs: '15px 0 0 15px', sm: '0' },
+
                   }}
                   type='text'
                 />
-
-
                 <StyledButton>Search</StyledButton>
               </ButtonGroup>
-            </Stack>
-          </Grid>
+            </BoxContainer>
+          </Toolbar>
+        </StyledContained>
 
-        </Grid>
-      </Container>
-    </StyledBox >
+      </StyledBox >
+    </>
+
   );
 };
 

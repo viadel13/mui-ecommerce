@@ -1,43 +1,50 @@
-import { Box, Container, Grid, Stack, ThemeProvider } from "@mui/material";
+import { AppBar, Box, Container, Grid, Stack, ThemeProvider, createTheme } from "@mui/material";
 import TopHeader from "./components/TopHeader/Index";
 import Header from "./components/Header/Index";
-import { theme } from "./theme";
 import Sidebar from "./components/Sidebar/Index";
 import Navbar from "./components/Navbar/Index";
 import Home from "./components/Home/Index";
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
+
 
 
 function App() {
-  const theme = useTheme()
-  const matches = useMediaQuery(theme.breakpoints.down('sm'));
-  
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        xm: 400, // Ajout du breakpoint xm avec la valeur 400
+        sm: 600,
+        md: 960,
+        lg: 1280,
+        xl: 1920,
+      },
+    },
+  })
+
   return (
-    <Box position='relative'>
-      <Box top={0} sx={{position: {xs: 'sticky', sm: 'static', md: 'static'} }} zIndex={1} bgcolor='yellow'>
-        <TopHeader />
-        <Header />
+    <ThemeProvider theme={theme}>
+      <Box>
+        <AppBar sx={{position: {xs: 'sticky', sm: 'static'}}}>
+          <TopHeader />
+          <Header />
+        </AppBar>
+        <Navbar />
+
+        <Container sx={{ display: { xs: 'initial', sm: 'block' }, mt: 2 }}>
+          <Grid container spacing={3}>
+            <Grid item md={3} sm={3} sx={{ display: { xs: 'none', sm: 'block', md: 'block' } }}>
+              <Sidebar />
+            </Grid>
+            <Grid item xs={12} md={9} sm={9}>
+              <Home />
+              <Home />
+              <Home />
+            </Grid>
+          </Grid>
+        </Container>
       </Box>
-      <Navbar />
-      <Container disableGutters={matches}  sx={{ mt: 4 }}>
-        <Grid container spacing={3}>
-          <Grid item xs={3} md={3} sm={3} sx={{ display: { xs: 'none', sm: 'block', md: 'block' } }}>
-            <Sidebar />
-          </Grid>
-          <Grid item xs={12} md={9} sm={9}>
-            <Home />
-            <Home />
-            <Home />
-          </Grid>
-        </Grid>
-      </Container>
 
-
-
-
-    </Box>
-
+    </ThemeProvider>
 
 
   );

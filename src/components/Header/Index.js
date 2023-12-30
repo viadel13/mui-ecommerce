@@ -68,13 +68,13 @@ const Header = () => {
     <>
       <StyledBox>
         <StyledContained disableGutters sx={{ maxWidth: { xs: 'xs', sm: 'md', md: 'xl', lg: 'lg', xl: 'xs' } }}>
-          <Toolbar>
+          <Toolbar >
             <IconButton
               size="large"
               edge="start"
               color="inherit"
               aria-label="menu"
-              sx={{ mr: 0, display: { xs: 'block', sm: "none", md: 'none', lg: 'none' } }}
+              sx={{ mr: 0, display: { xs: 'flex', sm: "none", md: 'none', lg: 'none' } }}
             >
               <MenuIcon />
             </IconButton>

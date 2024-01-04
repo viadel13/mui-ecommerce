@@ -11,7 +11,7 @@ const TopHeader = () => {
 
 
   return (
-    <>
+    <AppBar position='static'>
       <StyledBox>
         <Container disableGutters sx={{ display: 'flex', justifyContent: { xs: 'space-around', sm: 'space-between' }, maxWidth: { xs: 'xs', sm: 'md', md: 'xl', lg: 'lg', xl: 'lg' } }}>
           <Stack direction='row'>
@@ -86,7 +86,7 @@ const TopHeader = () => {
         </Container>
       </StyledBox>
 
-    </>
+    </AppBar>
 
   )
 }

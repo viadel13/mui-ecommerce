@@ -58,6 +58,7 @@ const Header = () => {
 
   }));
 
+
   const BoxContainer = styled(Container)(({ theme }) => ({
     width: '100%',
 
@@ -65,7 +66,7 @@ const Header = () => {
 
 
   return (
-    <>
+    <AppBar position='static'>
       <StyledBox>
         <StyledContained disableGutters sx={{ maxWidth: { xs: 'xs', sm: 'md', md: 'xl', lg: 'lg', xl: 'xs' } }}>
           <Toolbar >
@@ -175,7 +176,7 @@ const Header = () => {
         </StyledContained>
 
       </StyledBox >
-    </>
+    </AppBar>
 
   );
 };

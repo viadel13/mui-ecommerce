@@ -6,11 +6,13 @@ import { useEffect, useState } from 'react';
 const Sidebar = () => {
 
   return (
-    <Box sx={{  position: 'sticky', height: 'auto', top:'70px'}}>
+       // sx={{  position: 'sticky', height: 'auto', top:'70px'}}
+      //  <Paper variant='outlined' sx={{ overflowY: 'auto', maxHeight: 'calc(90vh - 40px)' }}></Paper>
+    <Box >
       <Divider>
         <Typography variant='h6' color='#D10024'>CATEGORY</Typography>
       </Divider>
-      <Paper variant='outlined' sx={{ overflowY: 'auto', maxHeight: 'calc(90vh - 40px)' }}>
+      <Paper variant='outlined'>
         <List>
           <ListItem disablePadding secondaryAction={
             <IconButton edge="end" aria-label="Add">

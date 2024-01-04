@@ -24,10 +24,16 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Box>
-        <AppBar sx={{position: {xs: 'sticky', sm: 'static'}}}>
-          <TopHeader />
-          <Header />
-        </AppBar>
+        <>
+          <AppBar position='sticky' sx={{ display: { xs: 'flex', sm: 'none' } }}>
+            <TopHeader />
+            <Header />
+          </AppBar>
+          <AppBar position='static' sx={{ display: { xs: 'none', sm: 'flex' } }}>
+            <TopHeader />
+            <Header />
+          </AppBar>
+        </>
         <Navbar />
 
         <Container sx={{ display: { xs: 'initial', sm: 'block' }, mt: 2 }}>
@@ -36,8 +42,6 @@ function App() {
               <Sidebar />
             </Grid>
             <Grid item xs={12} md={9} sm={9}>
-              <Home />
-              <Home />
               <Home />
             </Grid>
           </Grid>

@@ -119,7 +119,7 @@ const Home = () => {
                   variant="text"
                   sx={{ display: imageLoaded ? 'none' : 'block', textAlign: 'center', width: { xs: '100px' }, fontSize: { xs: '20px' } }}
                 /> */}
-              </Stack> 
+              </Stack>
               <Stack direction="row" px={2} pt='36px' spacing={1} justifyContent='end' sx={{ display: imageLoaded ? 'flex' : 'none' }}>
                 {/* <Avatar sx={{ bgcolor: '#D10024', fontSize: 12, height: 20, width: 45, border: '2px solid #D10024' }} variant="square">
                   NEW
@@ -277,7 +277,7 @@ const Home = () => {
                   variant="text"
                   sx={{ display: imageLoaded ? 'none' : 'block', textAlign: 'center', width: { xs: '100px' }, fontSize: { xs: '20px' } }}
                 /> */}
-              </Stack> 
+              </Stack>
               <Stack direction="row" px={2} pt='36px' spacing={1} justifyContent='end' sx={{ display: imageLoaded ? 'flex' : 'none' }}>
                 {/* <Avatar sx={{ bgcolor: '#D10024', fontSize: 12, height: 20, width: 45, border: '2px solid #D10024' }} variant="square">
                   NEW
@@ -358,7 +358,7 @@ const Home = () => {
                 />
               </Stack>
               <Stack direction="row" px={2} pt={2} spacing={1} justifyContent='end' sx={{ display: imageLoaded ? 'flex' : 'none' }}>
-         
+
                 <Avatar sx={{ bgcolor: 'white', fontSize: 12, height: 20, width: 45, color: '#D10024', border: '2px solid #D10024' }} variant="square">
                   -30%
                 </Avatar>
@@ -591,25 +591,28 @@ const Home = () => {
       <Box
         display='flex'
         alignItems='center'
-        sx={{ backgroundColor: '#E4E7ED', justifyContent: { xs: 'center', md: 'space-between' } }}
+        width='100%'
+        sx={{ backgroundColor: '#E4E7ED', justifyContent: { xs: 'space-between', sm: 'space-around', md: 'space-around' } }}
         mb={3}
         py={3}
       >
-        <div className='img-pub'>
-          <Avatar src={ecran} alt='laptop' sx={{ width: { sm: '110px', md: '160px', lg: '200px' }, height: { sm: '110px', md: '160px', lg: '200px' }, borderRadius: 0, display: { xs: 'none', sm: 'block' } }} />
-        </div>
+          <div className='img-pub' style={{ height: 'auto', width: '100%' }} >
+            <Avatar src={laptop} alt='laptop' sx={{ width: '100%', height: '100%', borderRadius: 0, display: { xs: 'none', sm: 'block', md: 'block' } }} />
+            <Avatar src={camera} alt='laptop' sx={{ width: '100%', height: '100%', borderRadius: 0, display: { xs: 'none', sm: 'block', md: 'none', lg: 'none' } }} />
+          </div>
 
-        <Stack direction='column' alignItems='center' rowGap={1}>
-          <Counter targetDate={targetDate} />
-          <Typography variant='h5' fontWeight={700} color='#2B2D42'>HOT DEAL THIS WEEK</Typography>
-          <Typography variant='p' mb={2}>NEW COLLECTION UP TO 50% OFF</Typography>
-          <StyledButton disableElevation disableRipple variant='contained'>
-            SHOP NOW
-          </StyledButton>
-        </Stack>
-        <div className='img-pub' >
-          <Avatar src={camera} alt='laptop' className='img-pub' sx={{ width: { sm: '110px', md: '160px', lg: '200px' }, height: { sm: '110px', md: '160px', lg: '200px' }, borderRadius: 0, display: { xs: 'none', sm: 'block' } }} />
-        </div>
+          <Stack direction='column' alignItems='center' rowGap={1} >
+            <Counter targetDate={targetDate} />
+            <Typography variant='h5' fontWeight={700} color='#2B2D42'>HOT DEAL THIS WEEK</Typography>
+            <Typography variant='p' mb={2}>NEW COLLECTION UP TO 50% OFF</Typography>
+            <StyledButton disableElevation disableRipple variant='contained'>
+              SHOP NOW
+            </StyledButton>
+          </Stack>
+          <div className='img-pub' style={{ height: 'auto', width: '100%' }} >
+            <Avatar src={camera} alt='laptop' className='img-pub' sx={{ width: '100%', height: '100%', borderRadius: 0, display: { xs: 'none', sm: 'none', md: 'block' } }} />
+          </div>
+          
       </Box>
     </Box>
   )
